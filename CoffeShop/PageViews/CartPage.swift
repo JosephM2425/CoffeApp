@@ -44,7 +44,7 @@ struct CartPage: View {
                             Spacer()
                             Text("Total")
                             Spacer()
-//                            Text("$ \(cartManager.total(), specifier: "%.2f")")
+                            Text("$ \(cartManager.total(), specifier: "%.2f")")
                                 .bold()
                             Spacer()
                         }
@@ -59,10 +59,9 @@ struct CartPage: View {
                             }
                             .padding()
                             .frame(width: 250.0)
-                            .background(Color("Alternative2"))
+                            .background(Color("Primary"))
                             .foregroundColor(Color.black)
                             .cornerRadius(25)
-                            
                             Spacer()
                         }
                     }.listRowBackground(Color.clear)

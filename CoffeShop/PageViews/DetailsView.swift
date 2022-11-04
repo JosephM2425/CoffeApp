@@ -12,13 +12,14 @@ struct DetailsView: View {
     @State var quantity = 1
     var product: Product
     @EnvironmentObject var cartManager: CartManager
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         ScrollView {
             AsyncImage(url: product.imageURL)
                 .cornerRadius(5)
                 .frame(maxWidth: .infinity, idealHeight: 150, maxHeight: 150)
-                .padding(.top, 32)
+                .padding(.top, 25)
             Text(product.name)
                 .frame(maxWidth: .infinity)
                 .multilineTextAlignment(.leading)
@@ -43,10 +44,11 @@ struct DetailsView: View {
             
             Button("Add \(quantity) to Cart") {
                 cartManager.add(product: product, quantity: quantity)
+                dismiss()
             }
                 .padding()
                 .frame(width: 250.0)
-                .background(Color("Alternative#2"))
+                .background(Color("Alternative#1"))
                 .foregroundColor(Color.white)
                 .cornerRadius(25)
                 .fontWeight(.heavy)
